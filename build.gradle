@@ -31,3 +31,9 @@ test {
 		}
 	}
 }
+
+task printJavaVersion {
+    doLast {
+        println "Java Version: " + System.getProperty("java.version")
+    }
+}
