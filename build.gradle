@@ -4,6 +4,12 @@ plugins {
 	id 'java'
 }
 
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
 group = 'com.planetpope'
 version = '0.0.1-SNAPSHOT'
 //sourceCompatibility = '8'
