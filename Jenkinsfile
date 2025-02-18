@@ -9,6 +9,14 @@ pipeline {
         sh './gradlew clean check --no-daemon'
       }
     }
+    stage('Hello') {
+      when {
+         branch "dev-*"
+      }
+      steps {
+         echo "Hello Alejandro Cardoso you are in branch dev-456"
+      }
+    }
   }
   post {
     always {
