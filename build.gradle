@@ -4,11 +4,11 @@ plugins {
 	id 'java'
 }
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(21)
-	}
-}
+// java {
+// 	toolchain {
+// 		languageVersion = JavaLanguageVersion.of(21)
+// 	}
+// }
 
 group = 'com.planetpope'
 version = '0.0.1-SNAPSHOT'
@@ -23,14 +23,14 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-// test {
-// 	useJUnitPlatform()
-// 	java {
-// 		toolchain {
-// 			languageVersion = JavaLanguageVersion.of(21)
-// 		}
-// 	}
-// }
+test {
+	useJUnitPlatform()
+	// java {
+	// 	toolchain {
+	// 		languageVersion = JavaLanguageVersion.of(21)
+	// 	}
+	// }
+}
 
 task printJavaVersion {
     doLast {
