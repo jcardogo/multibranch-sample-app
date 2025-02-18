@@ -23,6 +23,11 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-// test {
-// 	useJUnitPlatform()
-// }
+test {
+	useJUnitPlatform()
+	java {
+		toolchain {
+			languageVersion = JavaLanguageVersion.of(21)
+		}
+	}
+}
