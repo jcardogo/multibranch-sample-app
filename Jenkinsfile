@@ -48,7 +48,7 @@ pipeline {
 
     stage('Deploy Nginx Container') {
       steps {
-        sh '''docker run -d -p 8081:80 \ -v $(pwd)/html:usr/'''
+        sh 'docker run -d -p 8081:80 -v $(pwd)/html:usr/'
       }
     }
 
