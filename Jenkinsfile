@@ -47,7 +47,7 @@ pipeline {
   }
   post {
     always {
-        node ("local: 'defaul-agent'"){
+        node ("local: 'default-agent'"){
           junit(
           allowEmptyResults: true, 
           testResults: '**/build/test-results/test/*.xml'
