@@ -17,9 +17,6 @@ pipeline {
          branch "dev-*"
       }
       agent {
-        when {
-          branch "dev-*"
-        }
         label "Ububtu_jenkins: 'default-agent'"
       }
       steps {
