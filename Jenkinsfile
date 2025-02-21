@@ -17,7 +17,7 @@ pipeline {
          branch "dev-*"
       }
       agent {
-        lable "agent2"
+        label "agent2"
       }
       steps {
          echo "Hello Alejandro Cardoso you are in branch dev-456 deploying on agent2"
@@ -29,7 +29,7 @@ pipeline {
          branch "dev-*"
       }
       agent {
-        lable "agent2"
+        label "agent2"
       }
       steps {
         checkout([
@@ -49,7 +49,7 @@ pipeline {
          branch "dev-*"
       }
       agent {
-        lable "agent2"
+        label "agent2"
       }
       steps {
         script{
@@ -66,7 +66,7 @@ pipeline {
          branch "dev-*"
       }
       agent {
-        lable "agent2"
+        label "agent2"
       }
       steps {
         sh 'docker run -d -p 8081:80 -v $(pwd)/html:usr/'
@@ -78,7 +78,7 @@ pipeline {
          branch "dev-*"
       }
       agent {
-        lable "agent2"
+        label "agent2"
       }
       steps {
         sh 'curl http://localhost:8081'
