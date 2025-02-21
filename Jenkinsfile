@@ -38,7 +38,7 @@ pipeline {
             extensions: [[$class: 'CleanBeforeCheckout']], 
             userRemoteConfigs: [[
               credentialsId: env.GITHUB_CREDENTIALS, 
-              url: "https://github.com/${env.GITHUB_REPO}.git"
+              url: "https://${env.GITHUB_CREDENTIALS}@github.com/${env.GITHUB_REPO}.git"
               ]]
           ])
         }
