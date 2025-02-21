@@ -32,15 +32,20 @@ pipeline {
         label "agent2"
       }
       steps {
-        checkout([
-            $class: 'GitSCM', 
-            branches: [[name: '*/main']], 
-            extensions: [[$class: 'CleanBeforeCheckout']], 
-            userRemoteConfigs: [[
-              credentialsId: env.Github_PAT, 
-              url: "https://github.com/${env.GITHUB_REPO}.git"
-              ]]
-          ])
+        echo 'Starting Checkout stage'
+        git branch: 'main',
+          url: "https://github.com/${env.GITHUB_REPO}.git"
+          credentialsID: 'Github_PAT'
+        echo 'CHeckout completed succesfully'
+        // checkout([
+        //     $class: 'GitSCM', 
+        //     branches: [[name: '*/main']], 
+        //     extensions: [[$class: 'CleanBeforeCheckout']], 
+        //     userRemoteConfigs: [[
+        //       credentialsId: env.Github_PAT, 
+        //       url: "https://github.com/${env.GITHUB_REPO}.git"
+        //       ]]
+        //   ])
         }
       }
     
