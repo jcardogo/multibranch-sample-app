@@ -3,7 +3,7 @@ pipeline {
   agent none //start with no agent especified at the pipeline level 
   
   environment {
-    GITHUB_CREDENTIALS= env.Github_PAT //use jenkins controller configured credential 
+    GITHUB_CREDENTIALS= "${env.Github_PAT}" //use jenkins controller configured credential 
     GITHUB_REPO= 'jcardogo/AlejandroCardoso_website' //repository identification
   }
   
