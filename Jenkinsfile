@@ -6,23 +6,44 @@ pipeline {
   stages {
     stage('Clone Repository') {
       agent {
-        label "Built-In Node: 'default-agent'"
+        label "local: 'default-agent'"
       }
       steps {
         sh './gradlew clean check --no-daemon'
       }
     }
-    stage('Hello') {
-      when {
-         branch "dev-*"
-      }
+    stage('Hello agent 2') {
+      // when {
+      //    branch "dev-*"
+      // }
       agent {
-        label "Ububtu_jenkins: 'default-agent'"
+        label "agent2: 'default-agent'"
       }
+      // steps {
+      //    echo "Hello Alejandro Cardoso you are in branch dev-456"
+      // }
       steps {
-         echo "Hello Alejandro Cardoso you are in branch dev-456"
+       echo "Hello agent2" 
       }
     }
+    stage('Hello agent 1'){
+      agent {
+        label "agent1: 'default-agent'"
+      }
+      steps {
+        echo "Hello agent1"
+      }
+    }
+    stage ('Hello agent local'){
+      agent {
+        label "local: 'default-agent'"
+      }
+      steps {
+        echo "Hello agent local"
+      }
+    }
+      
+
   }
   post {
     always {
