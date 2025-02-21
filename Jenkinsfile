@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Clone Repository') {
       agent {
-        label "local: 'default-agent'"
+        label "local"
       }
       steps {
         sh './gradlew clean check --no-daemon'
