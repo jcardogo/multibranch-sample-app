@@ -5,14 +5,11 @@ pipeline {
   }
   stages {
     stage('Clone Repository') {
+      agent {
+        label "Built-In Node: 'default-agent'"
+      }
       steps {
         sh './gradlew clean check --no-daemon'
-      }
-      agent {
-        when {
-          branch "dev-*"
-        }
-        label "Built-In Node: 'default-agent'"
       }
     }
     stage('Hello') {
