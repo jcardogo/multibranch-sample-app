@@ -17,7 +17,7 @@ pipeline {
       //    branch "dev-*"
       // }
       agent {
-        label "agent2: 'default-agent'"
+        label "agent2"
       }
       // steps {
       //    echo "Hello Alejandro Cardoso you are in branch dev-456"
@@ -28,7 +28,7 @@ pipeline {
     }
     stage('Hello agent 1'){
       agent {
-        label "agent1: 'default-agent'"
+        label "agent1"
       }
       steps {
         echo "Hello agent1"
@@ -36,7 +36,7 @@ pipeline {
     }
     stage ('Hello agent local'){
       agent {
-        label "local: 'default-agent'"
+        label "local"
       }
       steps {
         echo "Hello agent local"
